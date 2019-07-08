@@ -10,9 +10,13 @@ var result;
 var win;
 var loss;
 
+guessThisNumber = Math.floor(Math.random() * 101) + 19;
+//  
+
+$("#randomNum").html("Guess this number: " + guessThisNumber); 
 for(var i = 0; i < 4; i++){
 
-    var someNum = Math.floor(Math.random() * 120);
+    var someNum = Math.floor(Math.random() * 11) + 1;
     // console.log(someNum);
    
     var crystalCounter  = $("<div>");
