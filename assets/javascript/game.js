@@ -10,6 +10,10 @@ var result;
 var win = 0;
 var loss = 0;
 var exNum = 0;
+var image = [ "assets/images/crystal.jpg",
+            "assets/images/crystal.jpg",
+            "assets/images/crystal.jpg",
+            "assets/images/crystal.jpg"];
 
 guessThisNumber = Math.floor(Math.random() * 101) + 19;
 
@@ -22,7 +26,7 @@ for(var i = 0; i < 4; i++){
    
     var crystalCounter  = $("<div>");
   
-        crystalCounter.attr({"class": "crystalCounter", "numInBox": someNum });
+        crystalCounter.attr({"class": "crystalCounter", "numInBox": someNum,"src" : image});
 
         crystalCounter.html(someNum);
  
@@ -39,7 +43,7 @@ $(".crystalCounter").on("click", function(){
 
      if(exNum > guessThisNumber){
         //  console.log("you loose");
-        loss --;
+        loss ++;
         $("#loss").html("loss :" + loss);
         
     }
