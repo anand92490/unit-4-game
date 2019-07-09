@@ -24,6 +24,7 @@ for(var i = 0; i < 4; i++){
   
         crystalCounter.attr({"class": "crystalCounter", "numInBox": someNum });
 
+        crystalCounter.html(someNum);
  
    $(".crystalBox").append(crystalCounter);
  
@@ -32,19 +33,20 @@ for(var i = 0; i < 4; i++){
 $(".crystalCounter").on("click", function(){
 
     var boxGenNum = parseInt($(this).attr("numInBox"));
-
+ 
     exNum = exNum + boxGenNum;
-    //  console.log(exNum);
+     console.log(exNum);
 
      if(exNum > guessThisNumber){
         //  console.log("you loose");
         loss --;
-        $("#loss").html(loss);
+        $("#loss").html("loss :" + loss);
+        
     }
     else if(exNum === guessThisNumber){
         // console.log("you won");
         win ++;
-        $("#win").html(win);
+        $("#win").html("win :" + win);
 
-    }
+    }  
 });
