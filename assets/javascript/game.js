@@ -7,8 +7,8 @@
 // The game should reset and generate a new random number when the game is completed.
 
 var result;
-var win;
-var loss;
+var win = 0;
+var loss = 0;
 var exNum = 0;
 
 guessThisNumber = Math.floor(Math.random() * 101) + 19;
@@ -34,12 +34,17 @@ $(".crystalCounter").on("click", function(){
     var boxGenNum = parseInt($(this).attr("numInBox"));
 
     exNum = exNum + boxGenNum;
-     console.log(exNum);
+    //  console.log(exNum);
 
      if(exNum > guessThisNumber){
-         console.log("you loose");
+        //  console.log("you loose");
+        loss --;
+        $("#loss").html(loss);
     }
     else if(exNum === guessThisNumber){
-        console.log("you won");
+        // console.log("you won");
+        win ++;
+        $("#win").html(win);
+
     }
 });
