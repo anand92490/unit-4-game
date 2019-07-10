@@ -3,7 +3,7 @@
 // Each cristal should have a random hidden value assigned to it between 1-12.
 // The value that each cristal holds should be displayed when clicked and added to the value of the next cristal of the users choice.
 // If the value of the cristal is === that of the random number the than increment the value of the win counter
-// If the value is greater than the random number decrement the lost counter. 
+// If the value is greater than the random number increment the lost counter. 
 // The game should reset and generate a new random number when the game is completed.
 
 var result;
@@ -26,11 +26,13 @@ for(var i = 0; i < 4; i++){
    
     var crystalCounter  = $("<div>");
   
-        crystalCounter.attr({"class": "crystalCounter", "numInBox": someNum,"src" : image});
+        crystalCounter.attr({"class": "crystalCounter", 
+        "numInBox": someNum,"src" : image});
 
-        crystalCounter.html(someNum);
- 
+    
    $(".crystalBox").append(crystalCounter);
+
+   crystalCounter.html(someNum);
  
 }
 
@@ -54,3 +56,8 @@ $(".crystalCounter").on("click", function(){
 
     }  
 });
+
+// :( I'm running out of time but here are the actions reiquired to complete the game in Pseudocode.
+
+// 1. wrap up the code in a functions that would allow the user to reset and restart the game automatically upon completion of each round of the game.
+// 2. Make the crystal image fit into the crystalBox divs and  give some finishing touch to the images on the css.
